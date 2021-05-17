@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ShipComponent } from './ship/ship.component';
 import { MainComponent } from './main.component';
-import { ShipsComponent } from './ships/ships.component';
 
 const routes: Routes = [
   {
     path: '',
     component: MainComponent,
     children: [
-      { path: 'ships', component: ShipsComponent },
+      { path: 'ships', component: ShipComponent },
     ],
   },
 ];
