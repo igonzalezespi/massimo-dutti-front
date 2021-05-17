@@ -16,17 +16,17 @@ import { PrincipalComponent } from './components/principal/principal.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    PrincipalComponent
+    PrincipalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    PrincipalModule
+    PrincipalModule,
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

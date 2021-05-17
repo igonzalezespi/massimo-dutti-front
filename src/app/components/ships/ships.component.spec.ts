@@ -2,37 +2,37 @@ import { Component, Input } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { ShipsService } from 'src/app/services/ships.service';
 
+import { BehaviorSubject } from 'rxjs';
 import { ShipsComponent } from './ships.component';
 
 
 
-import { BehaviorSubject, of } from 'rxjs';
 
 describe('ShipsComponent', () => {
   let component: ShipsComponent;
   let fixture: ComponentFixture<ShipsComponent>;
-  const serviceMock ={
-    getShips:function(){ return  new BehaviorSubject([])}
-    
-  }
+  const serviceMock = {
+    getShips: () => new BehaviorSubject([]),
 
-  
+  };
+
+
   @Component({
-    selector: 'ships-details',
-    template: '<p>Mock Ship Details</p>'
+    selector: 'app-ships-details',
+    template: '<p>Mock Ship Details</p>',
   })
-  class MockShipDetails {
-    @Input() dataList:any;
+  class MockShipDetailsComponent {
+    @Input() dataList: any;
   }
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShipsComponent,MockShipDetails ],
-      providers:[
-        {provide: ShipsService, useValue: serviceMock} 
-      ]
+      declarations: [ShipsComponent, MockShipDetailsComponent],
+      providers: [
+        { provide: ShipsService, useValue: serviceMock },
+      ],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
