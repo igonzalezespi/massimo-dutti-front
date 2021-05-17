@@ -48,3 +48,8 @@ Navigate to `http://localhost:4200/`.
   - npm
   - npm intellisense
 
+**Aclaraciones**
+
+Estoy más acostumbrado a Gitlab y al desarrollo con metodología git-flow. En este proyecto para no complicarlo mucho, solo voy a crear
+issues y ramas, referenciando a cada issue en el commit. Pondré los comentarios necesarios en estos issues, pero cuando finalice la prueba
+los copiaré aquí para facilitar su lectura.
