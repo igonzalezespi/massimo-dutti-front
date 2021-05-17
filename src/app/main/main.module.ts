@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { RouterModule } from '@angular/router';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { MainComponentsRoutingModule } from './main-routing.module';
 import { MainComponent } from './main.component';
 import { ShipComponent } from './ship/ship.component';
@@ -18,6 +19,7 @@ import { ShipComponent } from './ship/ship.component';
     HttpClientModule,
     NgxPaginationModule,
     RouterModule,
+    LazyLoadImageModule,
   ],
 })
 export class MainModule { }

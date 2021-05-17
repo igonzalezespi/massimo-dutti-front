@@ -4,8 +4,8 @@
     <h3 class="panel-title">{{ship.name}}</h3>
   </div>
   <div class="panel-body text-center color">
-    <img [src]="'https://starwars-visualguide.com/assets/img/starships/' + ship.id + '.jpg'"
-      onError="this.src='https://starwars-visualguide.com/assets/img/big-placeholder.jpg'" class="img-size">
+    <img [lazyLoad]="'https://starwars-visualguide.com/assets/img/starships/' + ship.id + '.jpg'"
+      [defaultImage]="'https://starwars-visualguide.com/assets/img/big-placeholder.jpg'" class="img-size">
   </div>
 </div>
 
