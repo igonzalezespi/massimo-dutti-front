@@ -3,6 +3,7 @@ import {
 } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
+import { ValidationModule } from 'src/app/validation/validation.module';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { LoginComponent } from './login.component';
@@ -24,6 +25,7 @@ describe('LoginComponent', () => {
         FormsModule,
         RouterTestingModule.withRoutes([]),
         ReactiveFormsModule,
+        ValidationModule,
         HttpClientTestingModule,
       ],
 

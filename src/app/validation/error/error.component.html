@@ -1,0 +1,21 @@
+<!-- CONTROL -->
+<ng-container *ngIf="control">
+  <div class="input-group-append" *ngIf="control.dirty && control.invalid">
+    <span class="color-invalid" *ngFor="let validation of validations">
+      <ng-container *ngIf="control.errors && control.errors[validation.error]">
+        <i>{{validation.label}}</i>
+      </ng-container>
+    </span>
+  </div>
+</ng-container>
+
+<!-- FORM -->
+<ng-container *ngIf="!control && form">
+  <div class="input-group-append" *ngIf="form.dirty && form.invalid">
+    <span class="color-invalid" *ngFor="let validation of validations">
+      <ng-container *ngIf="form.errors && form.errors[validation.error]">
+        <i>{{validation.label}}</i>
+      </ng-container>
+    </span>
+  </div>
+</ng-container>
