@@ -35,4 +35,21 @@ Navigate to `http://localhost:4200/`.
 
 # Notas del desarrollador:
 
+**Sistema operativo**: Windows 10 (He utilizado este por ser el que tengo en mi equipo, pero en mi trabajo actual utilizo Ubuntu también)
 
+**NodeJS**: v12.11.1
+
+**Editor**: VSCode (Aunque también estoy acostumbrado a Webstorm, IntelliJ, pero utilizo este por ser gratuito)
+
+**Extensiones**:
+  - Angular Language Service
+  - EditorConfig for VS Code
+  - ESLint (Ya que es recomendado cambiar a esta librería en vez de TSLint)
+  - npm
+  - npm intellisense
+
+**Aclaraciones**
+
+Estoy más acostumbrado a Gitlab y al desarrollo con metodología git-flow. En este proyecto para no complicarlo mucho, solo voy a crear
+issues y ramas, referenciando a cada issue en el commit. Pondré los comentarios necesarios en estos issues, pero cuando finalice la prueba
+los copiaré aquí para facilitar su lectura.

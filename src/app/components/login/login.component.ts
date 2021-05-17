@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     // TODO : Falta integrar el servicio para autentificar al usuario
     // JSON simulando usuarios
     var userLogin = this.loginForm.value.username;
-    var filterJson = this.users.filter(function (user) { return user.first_name === userLogin  });
+    var filterJson = this.users.filter(function (user) { return user.username === userLogin  });
     if (filterJson.length > 0) {
       this.router.navigate(['/principal/ships'])
     } else {
