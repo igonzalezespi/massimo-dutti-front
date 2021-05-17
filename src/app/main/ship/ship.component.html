@@ -1,0 +1,33 @@
+<pagination-controls (pageChange)="pageChanged($event)" class="text-center"></pagination-controls>
+<div class="ship" *ngFor="let ship of (ships$ | async).results | paginate: config" (click)="openDetails(ship)">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ship.name}}</h3>
+  </div>
+  <div class="panel-body text-center color">
+    <img [src]="'https://starwars-visualguide.com/assets/img/starships/' + ship.id + '.jpg'"
+      onError="this.src='https://starwars-visualguide.com/assets/img/big-placeholder.jpg'" class="img-size">
+  </div>
+</div>
+
+<!-- Modal Details-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{detail?.name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>Modelo: {{detail?.model}}</div>
+        <div>Clase: {{detail?.starship_class}}</div>
+        <div>Fabricante: {{detail?.manufacturer}}</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

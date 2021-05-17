@@ -3,21 +3,21 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { RouterModule } from '@angular/router';
-import { PrincipalComponentsRoutingModule } from './principal-routing.module';
-import { ShipsComponent } from '../ships/ships.component';
-import { ShipsDetailsComponent } from '../ships/ships-details/ships-details.component';
+import { MainComponentsRoutingModule } from './main-routing.module';
+import { MainComponent } from './main.component';
+import { ShipComponent } from './ship/ship.component';
 
 @NgModule({
   declarations: [
-    ShipsComponent,
-    ShipsDetailsComponent,
+    MainComponent,
+    ShipComponent,
   ],
   imports: [
     CommonModule,
-    PrincipalComponentsRoutingModule,
+    MainComponentsRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
     RouterModule,
   ],
 })
-export class PrincipalModule { }
+export class MainModule { }
