@@ -53,3 +53,70 @@ Navigate to `http://localhost:4200/`.
 Estoy más acostumbrado a Gitlab y al desarrollo con metodología git-flow. En este proyecto para no complicarlo mucho, solo voy a crear
 issues y ramas, referenciando a cada issue en el commit. Pondré los comentarios necesarios en estos issues, pero cuando finalice la prueba
 los copiaré aquí para facilitar su lectura.
+
+Para poder ejecutar la aplicación, hay que arrancar tanto esta aplicación como la back-end:
+
+https://github.com/igonzalezespi/massimo-dutti-back
+
+Ambas con el comando `npm start`.
+
+## Pasos seguidos
+
+### Paso 1
+
+Instalo las dependencias de la aplicación y compruebo que funcione.
+
+Se está comprobando el "first_name" en vez del "username", lo arreglo aunque sea temporal.
+
+También corrijo "Introduzca su nombre" por "Introduzca su usuario" en el login.
+
+Veo que hay bastantes vulnerabilidades y dependencias obsoletas, las actualizo.
+
+### Paso 2
+
+Cambio TSLint a ESLint ya que es recomendable utilizarlo.
+
+Instalo la última versión compatible de ESLint.
+Instalo plugins para Angular.
+Instalo configuración de Airbnb (Considero que es de las mejores y más completas).
+
+### Paso 3
+
+Elimino advertencias en los test
+
+Instalo Husky y le asigno `npm test` y `npm run lint` en cada pre-commit.
+
+### Paso 4
+
+Configuración de vscode básica para poder formatear con ESLint. Exclusión de algunas carpetas en el editor y en las búsquedas.
+
+Configuración de .editorconfig para que todos los archivos tengan el mismo tipo de salto de línea (LF).
+
+### Paso 5
+
+Implemento un [servidor NodeJS](https://github.com/igonzalezespi/massimo-dutti-back)
+
+Adapto el código para realizar consultas a este servidor en el inicio de sesión y registro
+
+### Paso 6
+
+Realizar componente para mostrar el error debajo de los inputs y evitar repetir código.
+
+Pedir confirmación de contraseña. Implementar validador.
+
+En el componente "app-error" se pasa un array de validaciones como propiedad.
+
+Quizás con más tiempo de desarrollo lo suyo sería tomar los datos del formulario/controles para saber qué errores tiene que mostrar y así evitamos pasar este array.
+
+### Paso 7
+
+Utilizo la librería @ngrx para el patrón Redux.
+Las llamadas a la API swapi pasarán por el servidor NodeJS montado, de forma que todas estarán securizadas, simulando un entorno real.
+
+Reestructura de código
+
+Consulta de naves con Redux
+
+### Paso 8
+
+"Lazy load" de imágenes
