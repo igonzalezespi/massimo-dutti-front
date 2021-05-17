@@ -6,21 +6,15 @@
       <label for="firstName">Usuario</label>
       <input type="text" name="username" class="form-control" formControlName="username" />
       <hr class="hr-line">
-      <div class="input-group-append form__required" *ngIf="form.get('username').invalid">
-        <span class="colorInvalid">
-          <i>Username is required</i>
-        </span>
-      </div>
+      <app-error class="input-group-append" [form]="form" controlName="username"
+        [validations]="[{error: 'required', label: 'Usuario obligatorio'}]"></app-error>
     </div>
     <div class="form-group mb-4">
       <label for="firstName">Contraseña</label>
       <input type="password" name="password" class="form-control" formControlName="password" />
       <hr class="hr-line">
-      <div class="input-group-append form__required" *ngIf="form.get('password').invalid">
-        <span class="colorInvalid">
-            <i>Password is required</i>
-        </span>
-    </div>
+      <app-error class="input-group-append" [form]="form" controlName="password"
+        [validations]="[{error: 'required', label: 'Contraseña obligatoria'}]"></app-error>
     </div>
     <div class="buttons">
       <button type="submit" [disabled]="form.invalid" class="btn buttons__login">Iniciar sesión</button>

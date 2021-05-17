@@ -4,6 +4,7 @@ import {
 } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
+import { ValidationModule } from 'src/app/validation/validation.module';
 import { AuthService } from '../auth.service';
 import { RegisterComponent } from './register.component';
 
@@ -17,6 +18,7 @@ describe('RegisterComponent', () => {
     username: '',
     email: '',
     password: '',
+    confirmPassword: '',
   };
 
   beforeEach(waitForAsync(() => {
@@ -26,6 +28,7 @@ describe('RegisterComponent', () => {
         FormsModule,
         RouterTestingModule.withRoutes([]),
         ReactiveFormsModule,
+        ValidationModule,
         HttpClientTestingModule,
       ],
     })
@@ -86,6 +89,15 @@ describe('RegisterComponent', () => {
     expect(component.form.get('password').errors.minlength).toBeTruthy();
   });
 
+  it('should be invalid when passwords do not match', () => {
+    component.form.setValue({
+      ...dummyForm,
+      password: 'abcde',
+      confirmPassword: '12345',
+    });
+    expect(component.form.errors.mustmatch).toBeTruthy();
+  });
+
   it('should register service when the form is valid', fakeAsync(() => {
     const authService = TestBed.inject(AuthService);
     const authSpy = jest.spyOn(authService, 'register');
@@ -93,6 +105,7 @@ describe('RegisterComponent', () => {
     component.form.setValue({
       username: 'bbbbbb',
       password: 'bbbbbb',
+      confirmPassword: 'bbbbbb',
       firstName: 'bbbbbb',
       lastName: 'bbbbbb',
       email: 'bbb@bbb.com',

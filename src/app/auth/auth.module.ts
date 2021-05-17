@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ValidationModule } from '../validation/validation.module';
 import { AuthService } from './auth.service';
 
 @NgModule({
@@ -16,6 +17,7 @@ import { AuthService } from './auth.service';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    ValidationModule,
   ],
   providers: [
     AuthService,
